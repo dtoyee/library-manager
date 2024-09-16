@@ -1,0 +1,21 @@
+body {
+    font-family: 'Tahoma';
+    background-color: #fbfbfb;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(22, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 900px;
+    height: 600px;
+    background-color: aliceblue;
+}
