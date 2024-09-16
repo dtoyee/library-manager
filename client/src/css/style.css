@@ -1,6 +1,5 @@
 body {
     font-family: 'Tahoma';
-    background-color: #fbfbfb;
     margin: 0;
     padding: 0;
 }
@@ -8,14 +7,51 @@ body {
 .wrapper {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(22, 40, 40);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #142d4c;
+}
+
+.container {
+    width: 1150px;
+    min-height: 600px;
+    background: #ececec;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-1 {
+    width: 20%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container {
-    width: 900px;
-    height: 600px;
-    background-color: aliceblue;
+.col-2 {
+    width: 80%;
+    padding: 5px;
+}
+
+.menu-link {
+    width: 120px;
+    height: 30px;
+    background-color: #142d4c;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: 0.2s ease-in-out;
+}
+
+.menu-link:hover {
+    background-color: #1d416d;
 }
