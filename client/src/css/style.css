@@ -16,7 +16,8 @@ body {
 .container {
     width: 1150px;
     min-height: 600px;
-    background: #ececec;
+    background-color: #ececec;
+    border-radius: 2px;
 }
 
 .row-container {
@@ -36,6 +37,8 @@ body {
 .col-2 {
     width: 80%;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-link {
@@ -53,5 +56,82 @@ body {
 }
 
 .menu-link:hover {
+    background-color: #1d416d;
+}
+
+.active-menu-link {
+    width: 120px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: 0.2s ease-in-out;
+    background-color: #1d416d;
+}
+
+.active-menu-link:hover {
+    background-color: #142d4c;
+}
+
+.site-title {
+    font-size: 2em;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.breadcrumb {
+    width: 200px;
+    height: 30px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-link {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.breadcrumb-link > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.breadcrumb-active-page {
+    color: #6d6d6d;
+}
+
+.search-holder {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.searchbox {
+    height: 25px;
+    width: 700px;
+}
+
+.add-book-btn {
+    width: 200px;
+    height: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #142d4c;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 4px;
+    padding-bottom: 7px;
+    margin-left: 5px;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+}
+
+.add-book-btn:hover {
     background-color: #1d416d;
 }

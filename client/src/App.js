@@ -1,19 +1,15 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import './css/style.css'
-import Container from './components/container'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
 
 function App() {
-  const [message, setMessage] = useState('')
-
-  useEffect(() => {
-    let fetchMessage = axios.get("http://localhost:8000/test")
-    fetchMessage.then(data => {
-      setMessage(data.data.message)
-    })
-  }, [])
   return (
-    <Container />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<Books />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
