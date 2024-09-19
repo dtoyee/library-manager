@@ -3,7 +3,7 @@ function SearchBar() {
         <div className="search-holder">
             <div className="searchbox-add-button">
                 <input type="text" className="searchbox" />
-                <a href="/" className="add-book-btn">Add Book</a>
+                <a href="/books/add" className="add-book-btn">Add Book</a>
             </div>
         </div>
     )

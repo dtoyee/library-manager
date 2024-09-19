@@ -107,6 +107,9 @@ body {
 .search-holder {
     width: 100%;
     height: 50px;
+}
+
+.searchbox-add-button {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -118,20 +121,72 @@ body {
 }
 
 .add-book-btn {
-    width: 200px;
     height: 25px;
     color: #ffffff;
     text-decoration: none;
     background-color: #142d4c;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 4px;
+    padding-top: 8px;
     padding-bottom: 7px;
     margin-left: 5px;
     border-radius: 2px;
     transition: 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
 }
 
 .add-book-btn:hover {
     background-color: #1d416d;
+}
+
+.add-book-form-holder {
+    width: 95%;
+    min-height: 100px;
+    margin-top: 20px;
+}
+
+.book-description {
+    width: 600px;
+    min-height: 100px;
+    margin-top: 10px;
+}
+
+.book-label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-book-form-holder > input[type="text"] {
+    width: 300px;
+}
+
+.add-book-form-holder > button {
+    height: 35px;
+}
+
+.login-holder {
+    width: 400px;
+    height: 400px;
+    background-color: #ececec;
+    border-radius: 3px;
+}
+
+.login-title {
+    width: 98%;
+    min-height: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 1.7rem;
+    text-align: center;
+    border-bottom: thin solid #d6d6d6;
+}
+
+.login-form {
+    width: 98%;
+    min-height: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
 }
