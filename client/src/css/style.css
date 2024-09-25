@@ -169,7 +169,7 @@ body {
 
 .login-holder {
     width: 400px;
-    height: 400px;
+    height: 350px;
     background-color: #ececec;
     border-radius: 3px;
 }
@@ -189,4 +189,41 @@ body {
     min-height: 50px;
     margin: 0 auto;
     margin-top: 10px;
+}
+
+.login-section-holder {
+    width: 100%;
+    height: 70px;
+}
+
+.login-section-holder > label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-section-holder > input[type="text"], input[type="password"] {
+    width: 97%;
+    height: 25px;
+}
+
+.login-btn {
+    height: 32px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #142d4c;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    margin-left: 5px;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: #1d416d;
+    color: #ffffff;
 }
