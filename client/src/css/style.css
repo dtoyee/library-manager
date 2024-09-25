@@ -204,6 +204,8 @@ body {
 .login-section-holder > input[type="text"], input[type="password"] {
     width: 97%;
     height: 25px;
+    border-radius: 3px;
+    border: thin solid #d6d6d6;
 }
 
 .login-btn {

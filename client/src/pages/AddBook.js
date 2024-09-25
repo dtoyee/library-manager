@@ -5,8 +5,18 @@ import Menu from "../components/menu";
 import SiteTitle from "../components/site-title";
 import NewBook from "../components/add-book";
 import "../css/style.css";
+import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
+import { useNavigate } from 'react-router-dom';
 
 function AddBook() {
+  const navigate = useNavigate()
+  const isAuthenticated = useIsAuthenticated()
+
+  useEffect(() => {
+    if(!isAuthenticated) {
+      navigate('/login')
+    }
+  }, [])
   return (
     <main className="wrapper">
       <div className="container">
