@@ -22,7 +22,7 @@ function Login() {
       "Content-Type": "application/json",
     },
   };
-
+  // TO DO: Check if details were entered
   const login = () => {
     axios.post("http://localhost:8000/api/login", userDetails, config)
       .then(res => {

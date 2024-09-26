@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { findUserByUsername } from './database.js'
+import { findUserByUsername, updatePassword } from './database.js'
 import generateToken from './token.js'
 
 const app = express()
@@ -18,6 +18,7 @@ app.post('/api/login', async (req, res) => {
     const foundUser = await findUserByUsername("username","users",username)
 
     if(foundUser[0].username === username) {
+        // TO DO: decrypt password and check match
         if(foundUser[0].password === password) {
             let userDetails = {
                 id: foundUser[0].id,
@@ -27,4 +28,12 @@ app.post('/api/login', async (req, res) => {
             res.send({ success: true, user: userDetails, token: token })
         }
     }
+})
+
+app.post('/api/change-password', (req, res) => {
+    // TODO: encrypt password
+    const userId = req.body.userId
+    const newPassword = req.body.password
+    updatePassword(newPassword, userId)
+    res.send({ success: true })
 })

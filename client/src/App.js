@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import AddBook from "./pages/AddBook";
 import Login from "./pages/Login";
+import Settings from "./pages/Settings";
 
 function App() {
   const store = createStore({
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/books" element={<Books />} />
           <Route path="/books/add" element={<AddBook />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

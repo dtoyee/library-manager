@@ -21,7 +21,7 @@ function NewBook() {
         <>
             <div className="search-holder">
                 <div className="searchbox-add-button">
-                    <input type="text" className="searchbox" onChange={(e) => {setBookISBN(e.target.value)} } />
+                    <input type="text" className="searchbox" placeholder="Book ISBN" onChange={(e) => {setBookISBN(e.target.value)} } />
                     <a className="add-book-btn" onClick={searchISBN}>Search</a>
                 </div>
 
