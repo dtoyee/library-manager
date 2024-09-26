@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { findUserByUsername, updatePassword } from './database.js'
+import { addBook, findUserByUsername, updatePassword } from './database.js'
 import generateToken from './token.js'
 
 const app = express()
@@ -35,5 +35,15 @@ app.post('/api/change-password', (req, res) => {
     const userId = req.body.userId
     const newPassword = req.body.password
     updatePassword(newPassword, userId)
+    res.send({ success: true })
+})
+
+app.post('/api/add-book', (req, res) => {
+    const title = req.body.title
+    const isbn = req.body.isbn
+    const author = req.body.author
+    const publish_year = req.body.publish_year
+    const slug = req.body.slug
+    addBook(title,author,publish_year,isbn,slug)
     res.send({ success: true })
 })

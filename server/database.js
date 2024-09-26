@@ -5,13 +5,25 @@ const connection = mysql
     host: "localhost",
     user: "root",
     database: "library-manager",
-  }).promise();
+  })
+  .promise();
 
 export async function findUserByUsername(field, table, value) {
-  const [rows] = await connection.query("SELECT * FROM "+ table +" WHERE "+ field +" = '"+ value +"'")
+  const [rows] = await connection.query(
+    "SELECT * FROM " + table + " WHERE " + field + " = '" + value + "'"
+  );
   return rows;
 }
 
 export function updatePassword(password, userId) {
-  connection.query("UPDATE users SET password = '" + password + "' WHERE id = '" + userId + "'")
+  connection.query(
+    "UPDATE users SET password = '" + password + "' WHERE id = '" + userId + "'"
+  );
+}
+
+export function addBook(title, author, publish_year, isbn, slug) {
+  connection.query(
+    "INSERT INTO books (title, author, publish_year, isbn, slug) VALUES(?,?,?,?,?)",
+    [title, author, publish_year, isbn, slug]
+  );
 }
