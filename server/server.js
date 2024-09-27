@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { addBook, findUserByUsername, updatePassword } from './database.js'
+import { addBook, deleteBook, findUserByUsername, getAllBooks, updatePassword } from './database.js'
 import generateToken from './token.js'
 
 const app = express()
@@ -46,4 +46,14 @@ app.post('/api/add-book', (req, res) => {
     const slug = req.body.slug
     addBook(title,author,publish_year,isbn,slug)
     res.send({ success: true })
+})
+
+app.get('/api/get-all-books', async (req, res) => {
+    const allBooks = await getAllBooks()
+    res.send({ books: allBooks })
+})
+
+app.post("/api/delete-book", (req, res) => {
+    const id = req.body.id
+    deleteBook(id)
 })

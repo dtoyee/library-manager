@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import Breadcrumb from '../components/breadcrumb';
 import Menu from '../components/menu';
-import SearchBar from '../components/search-bar';
 import SiteTitle from '../components/site-title';
 import '../css/style.css'
 import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 import { useNavigate } from 'react-router-dom';
+import AllBooks from '../components/all-books';
 
 function Books() {
   const navigate = useNavigate()
@@ -36,7 +36,7 @@ function Books() {
                 { linkName: "Books", activeLink: false },
               ]}
             />
-            <SearchBar />
+            <AllBooks />
           </div>
         </div>
       </div>

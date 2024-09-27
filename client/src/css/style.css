@@ -253,3 +253,31 @@ body {
     font-size: 0.7rem;
     margin-top: 5px;
 }
+
+.table {
+    text-align: center;
+    border: thin solid #142d4c;
+}
+
+.table > thead > tr > th {
+    background-color: #142d4c;
+    color: #ffffff;
+    font-weight:lighter;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table > tbody > tr > td {
+    border: thin solid #142d4c;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table > tbody > tr:nth-child(odd) {
+    background-color: #d6d6d6;
+}
+
+.table > tbody > tr:hover {
+    background-color: #a5a5a5;
+    transition: 0.2s ease-in-out;
+}

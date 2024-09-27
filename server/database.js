@@ -27,3 +27,12 @@ export function addBook(title, author, publish_year, isbn, slug) {
     [title, author, publish_year, isbn, slug]
   );
 }
+
+export async function getAllBooks() {
+  const [rows] = await connection.query("SELECT * FROM books ORDER BY id DESC")
+  return rows
+}
+
+export function deleteBook(id) {
+  connection.query("DELETE FROM books WHERE id = '"+ id +"'")
+}
