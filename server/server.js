@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { addBook, deleteBook, findUserByUsername, getAllBooks, updatePassword } from './database.js'
 import generateToken from './token.js'
+import bcrypt from 'bcryptjs'
 
 const app = express()
 
@@ -16,10 +17,10 @@ app.post('/api/login', async (req, res) => {
     const username = req.body.username
     const password = req.body.password
     const foundUser = await findUserByUsername("username","users",username)
+    const encPassword = foundUser[0].password
 
     if(foundUser[0].username === username) {
-        // TO DO: decrypt password and check match
-        if(foundUser[0].password === password) {
+        if(bcrypt.compareSync(password, encPassword)) {
             let userDetails = {
                 id: foundUser[0].id,
                 username: foundUser[0].username
@@ -31,10 +32,10 @@ app.post('/api/login', async (req, res) => {
 })
 
 app.post('/api/change-password', (req, res) => {
-    // TODO: encrypt password
     const userId = req.body.userId
     const newPassword = req.body.password
-    updatePassword(newPassword, userId)
+    const encPassword = bcrypt.hashSync(newPassword, bcrypt.genSaltSync())
+    updatePassword(encPassword, userId)
     res.send({ success: true })
 })
 
